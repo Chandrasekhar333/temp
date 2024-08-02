@@ -2,7 +2,7 @@
 FROM nginx:alpine
 
 # Copy the static website files to the Nginx html directory
-COPY templates var/www/html
+COPY /project/medplus var/www/html
 
 # Expose port 80
 EXPOSE 80
