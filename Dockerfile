@@ -1,11 +1,11 @@
-# Use the official Nginx image as the base image
-FROM nginx:alpine
+# Use the official Apache image as the base image
+FROM httpd:alpine
 
-# Copy the static website files to the Nginx html directory
-COPY /project/medplus var/www/html
+# Copy the static website files to the Apache html directory
+COPY /project/medplus /var/www/html
 
 # Expose port 80
 EXPOSE 80
 
-# Start Nginx when the container launches
-CMD ["nginx", "-g", "daemon off;"]
+# Start Apache when the container launches
+CMD ["httpd-foreground"]
